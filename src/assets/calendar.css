@@ -1,0 +1,18 @@
+@import './base.css';
+
+.calendar-frame {
+    width: 100%;
+    height: calc(100% - var(--calendar-header-height));
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.calendar-body {
+    display: flex;
+    overflow-y: scroll;
+}
+
+.calendar-rows {
+    overflow-x: clip;
+
+}
