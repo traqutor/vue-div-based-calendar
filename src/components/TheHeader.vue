@@ -18,7 +18,7 @@
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
-import { useCounterStore } from '@/stores/calendar-store'
+import { useCounterStore } from '@/features/calendar/stores/calendar-store'
 import TheIconItem from '@/components/TheIconItem.vue'
 
 const store = useCounterStore()

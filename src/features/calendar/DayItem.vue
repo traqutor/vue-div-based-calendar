@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useCounterStore } from '@/stores/calendar-store'
+import { useCounterStore } from '@/features/calendar/stores/calendar-store'
 import type { DateTime } from 'luxon'
 
 defineProps<{ day: DateTime }>()

@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { type CalendarEventItem, useCounterStore } from '@/stores/calendar-store'
+import { onUpdated, ref } from 'vue'
+import { type CalendarEventItem, useCounterStore } from '@/features/calendar/stores/calendar-store'
 
 const props = defineProps<{ item: CalendarEventItem }>()
 
@@ -23,6 +23,10 @@ function resizeDrag() {
     store.calcPositionXForDateTime(props.item.start)
   emit('change', width >= 0 ? width : 0)
 }
+
+onUpdated(() => {
+  item.value = props.item;
+})
 </script>
 
 <style scoped>

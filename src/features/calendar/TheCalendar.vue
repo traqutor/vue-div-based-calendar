@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useCounterStore } from '@/stores/calendar-store'
+import { useCounterStore } from '@/features/calendar/stores/calendar-store'
 import { useResizeObserver } from '@vueuse/core'
-import TheRowItem from '@/components/TheRowItem.vue'
-import TheCalendarHeader from '@/components/calendar/TheCalendarHeader.vue'
-import TheCalendarMenu from '@/components/calendar/TheCalendarMenu.vue'
+import RowContent from '@/features/calendar/RowContent.vue'
+import TheCalendarHeader from '@/features/calendar/TheCalendarHeader.vue'
+import TheCalendarMenu from '@/features/calendar/TheCalendarMenu.vue'
 
 const store = useCounterStore()
 const elCal = ref<HTMLElement>()
@@ -30,7 +30,7 @@ const rows = computed(() => store.rows)
     <div class="calendar-body" ref="elCal">
       <TheCalendarMenu />
       <div ref="elRows" class="calendar-rows">
-        <TheRowItem v-for="item in rows" :key="item.id" :item="item" />
+        <RowContent v-for="item in rows" :key="item.id" :item="item" />
       </div>
     </div>
   </div>

@@ -13,8 +13,8 @@
 
 <script lang="ts" setup>
 import { computed, watch, ref } from 'vue'
-import { type CalendarEventItem, type RowItem, useCounterStore } from '@/stores/calendar-store'
-import EventResize from '@/components/calendar/EventResize.vue'
+import { type CalendarEventItem, type CalendarRow, useCounterStore } from '@/features/calendar/stores/calendar-store'
+import EventResize from '@/features/calendar/EventResize.vue'
 import type { DateTime } from 'luxon'
 
 const props = defineProps<{ item: CalendarEventItem }>()
@@ -55,8 +55,8 @@ function onDragEndHandler() {
 
     if (fromRowIdx >= 0 && toRowIdx >= 0) {
       const rows = [...store.rows]
-      const rowFrom: RowItem = rows[fromRowIdx]
-      const rowTo: RowItem = rows[toRowIdx]
+      const rowFrom: CalendarRow = rows[fromRowIdx]
+      const rowTo: CalendarRow = rows[toRowIdx]
 
       const item = { ...props.item }
 

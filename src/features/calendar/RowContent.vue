@@ -9,11 +9,11 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { type RowItem, useCounterStore } from '@/stores/calendar-store'
-import TheDayItem from '@/components/calendar/DayItem.vue'
-import TheCalendarEventItem from '@/components/calendar/EventItem.vue'
+import { type CalendarRow, useCounterStore } from '@/features/calendar/stores/calendar-store'
+import TheDayItem from '@/features/calendar/DayItem.vue'
+import TheCalendarEventItem from '@/features/calendar/EventItem.vue'
 
-defineProps<{ item: RowItem }>()
+defineProps<{ item: CalendarRow }>()
 
 const store = useCounterStore()
 const days = computed(() => store.days)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useCounterStore } from '@/stores/calendar-store'
+import { useCounterStore } from '@/features/calendar/stores/calendar-store'
 
 const store = useCounterStore()
 

@@ -21,9 +21,9 @@ export interface CalendarMouseEvent {
   isOutside: boolean
 }
 
-export interface RowItem {
+export interface CalendarRow {
   id: number
-  rowItem: string
+  label: string
   events?: CalendarEventItem[]
 }
 
@@ -41,7 +41,7 @@ export const useCounterStore = defineStore('counter', () => {
   const startDay = ref<DateTime>(DateTime.now().startOf('week'))
   const endDay = ref<DateTime>(DateTime.now().endOf('week'))
 
-  const rows = ref<RowItem[]>([])
+  const rows = ref<CalendarRow[]>([])
 
   const selectedCalendarEvent = ref<CalendarEventItem | null>()
 
@@ -122,7 +122,7 @@ export const useCounterStore = defineStore('counter', () => {
     mouse.value = useMouseInElement(calendar)
   }
 
-  function setCalendarRows(r: RowItem[]) {
+  function setCalendarRows(r: CalendarRow[]) {
     rows.value = r
   }
 

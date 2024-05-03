@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/calendar-store'
+import { useCounterStore } from '@/features/calendar/stores/calendar-store'
 import { computed } from 'vue'
 import type{ DateTime } from 'luxon';
 
@@ -16,7 +16,7 @@ function isActive(day: DateTime) {
 </script>
 <template>
   <div class="calendar-header">
-    <div class="calendar-header--filter">Filter</div>
+    <div class="calendar-header--filter">Date range</div>
     <div 
       v-for="(day, index) in days" 
       :key="index" class="calendar-header--item" 
