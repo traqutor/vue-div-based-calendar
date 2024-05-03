@@ -109,19 +109,6 @@ watch(
   border-radius: 8px;
 }
 
-.drv-handle {
-  transform: translate(100%, -50%);
-  top: 50%;
-  right: -3px;
-  cursor: ew-resize;
-  box-sizing: border-box;
-  position: absolute;
-  width: 8px;
-  height: 24px;
-  background-color: var(--color-border-hover);
-  z-index: 99;
-}
-
 .active {
   border: 3px solid var(--color-border-hover);
   background-color: var(--color-background-mute);
