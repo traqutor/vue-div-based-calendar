@@ -1,5 +1,5 @@
 <template>
-  <div class="drv-handle" draggable="true" @drag="resizeDrag" />
+  <div class="resize--handler" draggable="true" @drag="resizeDrag" />
 </template>
 
 <script lang="ts" setup>
@@ -26,7 +26,7 @@ function resizeDrag() {
 </script>
 
 <style scoped>
-.drv-handle {
+.resize--handler {
   transform: translate(100%, -50%);
   top: 50%;
   right: -3px;

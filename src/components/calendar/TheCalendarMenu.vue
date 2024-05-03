@@ -1,11 +1,3 @@
-<template>
-  <div class="calendar-menu">
-    <div v-for="row in rows" :key="row.id" class="menu-item" :class="{ active: isActive(row.id) }">
-      {{ row.id }}
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useCounterStore } from '@/stores/calendar-store'
@@ -20,6 +12,14 @@ function isActive(id: number) {
   return store.activeRow?.id === id
 }
 </script>
+
+<template>
+  <div class="calendar-menu">
+    <div v-for="row in rows" :key="row.id" class="menu-item" :class="{ active: isActive(row.id) }">
+      {{ row.id }}
+    </div>
+  </div>
+</template>
 
 <style>
 .calendar-menu {

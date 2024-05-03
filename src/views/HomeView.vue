@@ -8,7 +8,7 @@
       <div class="pre-wrap">
         <pre>E: {{ selected }}</pre>
         <pre>R: {{ selectedCalendarEvent }}</pre>
-        <pre>{{ mouse }}</pre>
+        <pre>{{ mouse }}{{i}}</pre>
       </div>
     </div>
   </main>
@@ -23,6 +23,8 @@ import { DateTime } from 'luxon'
 
 const store = useCounterStore()
 
+const i = computed(() => store.count)
+
 const selected = computed(() =>
   store.calcPositionXForDateTime(store.selectedCalendarEvent?.end ?? DateTime.now())
 )
@@ -30,8 +32,7 @@ const selectedCalendarEvent = computed(() => store.selectedCalendarEvent)
 const mouse = computed(() => store.mouseCalendar)
 
 onMounted(() => {
-
-  const rows = [1, 2, 3, 4].map((d) => {
+  const rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10,  ].map((d) => {
     return {
       id: d,
       rowItem: `Item no ${d}`,
@@ -69,8 +70,8 @@ onMounted(() => {
 
 .calendar-wrapper {
   margin: 32px;
-  height: 400px;
-  width: 800px;
+  height: 600px;
+  width: 1200px;
 }
 
 .pre-wrap {

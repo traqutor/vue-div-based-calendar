@@ -1,5 +1,5 @@
 <template>
-  <div class="app-header">
+  <div class="app--header">
     <TheIconItem>
       <EcosystemIcon />
     </TheIconItem>

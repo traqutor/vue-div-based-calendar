@@ -78,7 +78,6 @@ function onDragEndHandler() {
       }
 
       store.setCalendarRows(rows)
-
     }
   }
 }

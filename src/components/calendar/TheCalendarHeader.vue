@@ -1,16 +1,3 @@
-<template>
-  <div class="calendar-header">
-    <div class="calendar-header--filter">Filter</div>
-    <div 
-      v-for="(day, index) in days" 
-      :key="index" class="calendar-header--item" 
-      :class="{ active: isActive(day) }"
-      >
-        {{ day.day }}
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useCounterStore } from '@/stores/calendar-store'
 import { computed } from 'vue'
@@ -27,6 +14,20 @@ function isActive(day: DateTime) {
   return store.activeColumn?.day === day.day
 }
 </script>
+<template>
+  <div class="calendar-header">
+    <div class="calendar-header--filter">Filter</div>
+    <div 
+      v-for="(day, index) in days" 
+      :key="index" class="calendar-header--item" 
+      :class="{ active: isActive(day) }"
+      >
+        {{ day.day }}
+    </div>
+  </div>
+</template>
+
+
 
 <style scoped>
 .calendar-header {
