@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useCounterStore } from '@/features/calendar/stores/calendar-store'
+import { useCalendarStore } from '@/features/calendar/stores/calendar-store'
 
-const store = useCounterStore()
+const store = useCalendarStore()
 
 const rows = computed(() => store.rows)
 const menuWidth = computed(() => store.menuWidthPx)

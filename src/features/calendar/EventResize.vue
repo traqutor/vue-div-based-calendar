@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { onUpdated, ref } from 'vue'
-import { type CalendarEventItem, useCounterStore } from '@/features/calendar/stores/calendar-store'
+import { type CalendarEventItem, useCalendarStore } from '@/features/calendar/stores/calendar-store'
 
 const props = defineProps<{ item: CalendarEventItem }>()
 
@@ -14,7 +14,7 @@ const emit = defineEmits<{
 
 const item = ref(props.item)
 
-const store = useCounterStore()
+const store = useCalendarStore()
 
 function resizeDrag() {
   item.value.end = store.activeDateTime

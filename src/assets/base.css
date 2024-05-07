@@ -40,10 +40,7 @@
   --color-calendar-event: var(--vt-c-event-base);
 }
 
-/* calendar variables */
-:root{
-  --calendar-header-height: 64px;
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

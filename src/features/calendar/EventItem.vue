@@ -1,25 +1,16 @@
-<template>
-  <div
-    class="rent-item"
-    :class="{ active: isActive }"
-    :draggable="isActive"
-    @dragstart.self="onDragStartHandler"
-    @dragend.self="onDragEndHandler"
-    @click="onItemClick"
-  >
-    <event-resize v-if="isActive" :item="item" @change="onResizeHandler" />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { computed, watch, ref } from 'vue'
-import { type CalendarEventItem, type CalendarRow, useCounterStore } from '@/features/calendar/stores/calendar-store'
+import {
+  type CalendarEventItem,
+  type CalendarRow,
+  useCalendarStore
+} from '@/features/calendar/stores/calendar-store'
 import EventResize from '@/features/calendar/EventResize.vue'
 import type { DateTime } from 'luxon'
 
 const props = defineProps<{ item: CalendarEventItem }>()
 
-const store = useCounterStore()
+const store = useCalendarStore()
 
 const startPosition = ref<{ rowId: number; dateTime: DateTime }>()
 
@@ -93,6 +84,19 @@ watch(
   }
 )
 </script>
+
+<template>
+  <div
+    class="rent-item"
+    :class="{ active: isActive }"
+    :draggable="isActive"
+    @dragstart.self="onDragStartHandler"
+    @dragend.self="onDragEndHandler"
+    @click="onItemClick"
+  >
+    <event-resize v-if="isActive" :item="item" @change="onResizeHandler" />
+  </div>
+</template>
 
 <style scoped>
 .rent-item {

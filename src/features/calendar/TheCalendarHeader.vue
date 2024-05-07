@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useCounterStore } from '@/features/calendar/stores/calendar-store'
+import { useCalendarStore } from '@/features/calendar/stores/calendar-store'
 import { computed } from 'vue'
 import type{ DateTime } from 'luxon';
 
-const store = useCounterStore()
+const store = useCalendarStore()
 
 const days = computed(():DateTime[] => store.days)
 const headerHeight = computed(() => store.calendarHeaderHeightPx)

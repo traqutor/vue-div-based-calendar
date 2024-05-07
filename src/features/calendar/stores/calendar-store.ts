@@ -27,7 +27,7 @@ export interface CalendarRow {
   events?: CalendarEventItem[]
 }
 
-export const useCounterStore = defineStore('counter', () => {
+export const useCalendarStore = defineStore('calendar', () => {
   const count = ref(0)
   const calendarHeaderHeight = ref(64)
   const calendarRowHeight = ref(64)

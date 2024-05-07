@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useCounterStore } from '@/features/calendar/stores/calendar-store'
+import { useCalendarStore } from '@/features/calendar/stores/calendar-store'
 import type { DateTime } from 'luxon'
 
 defineProps<{ day: DateTime }>()
 
-const store = useCounterStore()
+const store = useCalendarStore()
 const cellWidth = computed(() => store.cellWidthPx)
 const cellHeight = computed(() => store.calendarRowHeightPx)
 

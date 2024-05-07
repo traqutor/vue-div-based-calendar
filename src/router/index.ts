@@ -7,7 +7,20 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      redirect: '/calendar',
+      children: [
+        {
+          path: '/calendar',
+          name: 'Calendar',
+          component: () => import('@/features/calendar/TheCalendar.vue')
+        },
+        {
+          path: '/kanban',
+          name: 'Kanban',
+          component: () => import('@/features/board/TheBoard.vue')
+        }
+      ]
     },
     {
       path: '/about',
