@@ -13,8 +13,8 @@ const elCal = ref<HTMLElement>()
 const elRows = ref<HTMLElement>()
 
 onMounted(() => {
-  initData();
-
+  initData()
+  store.setCalendarElement(elRows.value)
 })
 
 useResizeObserver(elCal, (entries) => {
